@@ -198,8 +198,10 @@ body.is-mobile .navbar__links {
     position: fixed;
     top: 0;
     left: 0;
-    bottom: 0;
+    height: 100vh;
+    height: 100dvh;
     width: min(78vw, 320px);
+    max-height: none;
     padding: 1rem 1rem 1rem;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 12px 0 32px rgba(35, 44, 51, 0.22);
@@ -212,6 +214,7 @@ body.is-mobile .navbar__links {
     transition: transform 0.35s ease;
     z-index: 110;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 body.is-menu-open .navbar__links {
