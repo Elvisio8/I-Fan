@@ -598,17 +598,23 @@ body.page--education.is-mobile .card-grid .card__title {
 
 .table-wrapper {
     overflow-x: auto;
+    overflow-y: hidden;
     margin-top: 1.2rem;
     -webkit-overflow-scrolling: touch;
+    width: 100%;
+    position: relative;
 }
 
 body.is-mobile .table-wrapper {
-    overflow-x: auto;
+    overflow-x: scroll;
+    overflow-y: hidden;
     margin-left: -1rem;
     margin-right: -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 0;
+    width: calc(100% + 2rem);
+    max-width: 100vw;
 }
 
 .grade-table {
