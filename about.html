@@ -9,7 +9,10 @@
 <body class="page page--about">
     <header class="navbar animate">
     <div class="navbar__brand">張乙藩 個人網頁</div>
-        <nav class="navbar__links">
+        <button class="navbar__toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="切換主選單">
+            <span class="navbar__toggle-line"></span>
+        </button>
+        <nav id="site-nav" class="navbar__links" aria-label="主要選單">
             <a href="index.html">首頁</a>
             <a href="about.html" class="is-active" aria-current="page">關於我</a>
             <a href="education.html">學歷</a>
@@ -21,6 +24,8 @@
             <a href="leadership.html">幹部經驗</a>
         </nav>
     </header>
+
+    <div class="navbar__overlay" data-nav-overlay></div>
 
     <main>
         <section class="hero hero--compact animate delay-1">
@@ -91,5 +96,7 @@
     <footer class="footer">
         <p>© 2025 張乙藩. All rights reserved.</p>
     </footer>
+
+    <script src="app.js"></script>
 </body>
 </html>
