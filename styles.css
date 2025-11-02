@@ -222,9 +222,17 @@ body.is-mobile .navbar__links a {
     padding: 0.65rem 0.75rem;
     border: 1px solid transparent;
     font-size: 1rem;
+    color: var(--deep);
+    background: transparent;
+    transition: all 0.25s ease;
 }
 
-body.is-mobile .navbar__links a:hover {
+body.is-mobile .navbar__links a.is-active,
+body.is-mobile .navbar__links a:hover,
+body.is-mobile .navbar__links a:focus {
+    background: rgba(90, 125, 124, 0.12);
+    border-color: var(--primary);
+    color: var(--primary);
     transform: none;
 }
 
