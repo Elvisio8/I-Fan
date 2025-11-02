@@ -86,5 +86,25 @@
     <footer class="footer">
         <p>© 2025 張乙藩. All rights reserved.</p>
     </footer>
+
+    <script>
+    (function () {
+        const body = document.body;
+        const mobileQuery = window.matchMedia('(max-width: 640px)');
+        const uaMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Windows Phone/i.test(navigator.userAgent);
+
+        const applyMobileClass = () => {
+            body.classList.toggle('is-mobile', mobileQuery.matches || uaMobile);
+        };
+
+        applyMobileClass();
+
+        if (typeof mobileQuery.addEventListener === 'function') {
+            mobileQuery.addEventListener('change', applyMobileClass);
+        } else if (typeof mobileQuery.addListener === 'function') {
+            mobileQuery.addListener(applyMobileClass);
+        }
+    })();
+    </script>
 </body>
 </html>

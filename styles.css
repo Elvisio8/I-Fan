@@ -331,6 +331,69 @@ main {
     color: var(--color-muted);
 }
 
+body.page--education.is-mobile main {
+    padding: 0 1rem 3rem;
+}
+
+body.page--education.is-mobile .navbar__links {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+body.page--education.is-mobile .navbar__links a {
+    padding: 0.35rem 0.4rem;
+    font-size: 0.95rem;
+}
+
+body.page--education.is-mobile .hero {
+    padding: 2.4rem 1.4rem;
+}
+
+body.page--education.is-mobile .two-column,
+body.page--education.is-mobile .card-grid {
+    grid-template-columns: 1fr;
+}
+
+body.page--education.is-mobile .card {
+    padding: 1.5rem;
+}
+
+body.page--education.is-mobile .timeline {
+    margin-left: 0;
+    padding-left: 0.4rem;
+    gap: 1.2rem;
+}
+
+body.page--education.is-mobile .timeline__item {
+    padding-left: 1.1rem;
+}
+
+body.page--education.is-mobile .timeline__item::before {
+    left: -2px;
+    width: 10px;
+    height: 10px;
+    box-shadow: 0 0 0 4px rgba(160, 193, 209, 0.35);
+}
+
+body.page--education.is-mobile .timeline__item::after {
+    left: 2.5px;
+    bottom: -1.2rem;
+}
+
+body.page--education.is-mobile .timeline__year {
+    font-size: 0.88rem;
+    letter-spacing: 0.08em;
+}
+
+body.page--education.is-mobile .timeline__details h3 {
+    font-size: 1.06rem;
+}
+
+body.page--education.is-mobile .timeline__details p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
 .badge-list {
     display: grid;
     gap: 0.6rem;
