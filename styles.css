@@ -195,14 +195,17 @@ body.is-mobile .navbar__toggle {
 }
 
 body.is-mobile .navbar__links {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    height: 100dvh;
-    width: min(78vw, 320px);
-    max-height: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: auto !important;
+    height: 100vh !important;
+    min-height: 100vh !important;
+    width: min(78vw, 320px) !important;
+    max-height: none !important;
     padding: 1rem 1rem 1rem;
+    margin: 0 !important;
     background: rgba(255, 255, 255, 0.95);
     box-shadow: 12px 0 32px rgba(35, 44, 51, 0.22);
     border-radius: 0 18px 18px 0;
