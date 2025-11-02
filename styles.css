@@ -599,6 +599,16 @@ body.page--education.is-mobile .card-grid .card__title {
 .table-wrapper {
     overflow-x: auto;
     margin-top: 1.2rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+body.is-mobile .table-wrapper {
+    overflow-x: auto;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 0;
 }
 
 .grade-table {
@@ -610,6 +620,17 @@ body.page--education.is-mobile .card-grid .card__title {
     border-radius: var(--radius-md);
     overflow: hidden;
     box-shadow: 0 10px 24px rgba(35, 44, 51, 0.08);
+}
+
+body.is-mobile .grade-table {
+    min-width: 600px;
+    font-size: 0.9rem;
+}
+
+body.is-mobile .grade-table thead th,
+body.is-mobile .grade-table tbody td {
+    padding: 0.6rem 0.8rem;
+    white-space: nowrap;
 }
 
 .grade-table thead th {
@@ -635,10 +656,24 @@ body.page--education.is-mobile .card-grid .card__title {
     color: var(--color-deep);
 }
 
+.award-table {
+    width: 100%;
+    min-width: 520px;
+}
+
 .award-table tbody td {
     vertical-align: top;
     line-height: 1.6;
     word-break: break-word;
+}
+
+body.is-mobile .award-table {
+    min-width: 600px;
+    font-size: 0.9rem;
+}
+
+body.is-mobile .award-table tbody td {
+    padding: 0.6rem 0.8rem;
 }
 
 
