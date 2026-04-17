@@ -384,6 +384,87 @@ body.is-mobile .navbar__links a:focus {
     color: var(--color-deep);
 }
 
+.card__cta {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.42rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--color-primary);
+    background: rgba(160, 193, 209, 0.14);
+    border: 1px solid rgba(160, 193, 209, 0.28);
+}
+
+.card--featured {
+    border-width: 2px;
+    transform-origin: center;
+}
+
+.card--featured::before {
+    opacity: 1;
+}
+
+.card--featured .card__title {
+    font-size: 1.45rem;
+}
+
+.card--featured .card__eyebrow {
+    font-weight: 700;
+}
+
+.card--featured .card__cta {
+    padding: 0.45rem 0.9rem;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 8px 18px rgba(35, 44, 51, 0.14);
+}
+
+.card--featured:hover {
+    transform: translateY(-10px) scale(1.02);
+}
+
+.card--featured-achievement {
+    background: linear-gradient(145deg, rgba(255, 250, 236, 0.98), rgba(255, 255, 255, 0.96));
+    border-color: rgba(216, 165, 74, 0.28);
+    box-shadow: 0 14px 28px rgba(216, 165, 74, 0.1);
+}
+
+.card--featured-achievement::before {
+    background: linear-gradient(145deg, rgba(216, 165, 74, 0.14), transparent 62%);
+}
+
+.card--featured-achievement .card__eyebrow,
+.card--featured-achievement .card__title {
+    color: #8a5a16;
+}
+
+.card--featured-achievement .card__cta {
+    background: linear-gradient(135deg, #c58f2f, #8a5a16);
+}
+
+.card--featured-competition {
+    background: linear-gradient(145deg, rgba(236, 248, 249, 0.98), rgba(255, 255, 255, 0.96));
+    border-color: rgba(76, 145, 149, 0.28);
+    box-shadow: 0 14px 28px rgba(76, 145, 149, 0.1);
+}
+
+.card--featured-competition::before {
+    background: linear-gradient(145deg, rgba(76, 145, 149, 0.14), transparent 62%);
+}
+
+.card--featured-competition .card__eyebrow,
+.card--featured-competition .card__title {
+    color: #2d696d;
+}
+
+.card--featured-competition .card__cta {
+    background: linear-gradient(135deg, #4c9195, #2d696d);
+}
+
 .card__eyebrow {
     font-size: 0.85rem;
     letter-spacing: 0.18em;
@@ -760,6 +841,24 @@ body.is-mobile .line-chart__svg {
 body.is-mobile .line-chart__points text,
 body.is-mobile .line-chart__x-axis span {
     font-size: 0.78rem;
+}
+
+body.is-mobile .card--featured {
+    padding: 1.55rem;
+}
+
+body.is-mobile .card__cta {
+    font-size: 0.74rem;
+    padding: 0.38rem 0.7rem;
+}
+
+body.is-mobile .card--featured .card__title {
+    font-size: 1.3rem;
+}
+
+body.is-mobile .card--featured .card__cta {
+    font-size: 0.76rem;
+    padding: 0.42rem 0.75rem;
 }
 
 body.is-mobile .table-wrapper {
