@@ -752,7 +752,11 @@ body.page--education.is-mobile .card-grid .card__title {
     min-width: 0;
 }
 
-.line-chart__swipe-hint {
+.swipe-hint {
+    display: none;
+}
+
+.swipe-fade {
     display: none;
 }
 
@@ -837,7 +841,7 @@ body.is-mobile .line-chart__canvas {
     padding-top: 2rem;
 }
 
-body.is-mobile .line-chart__swipe-hint {
+body.is-mobile .swipe-hint {
     position: absolute;
     top: 0.2rem;
     right: 0.15rem;
@@ -851,21 +855,55 @@ body.is-mobile .line-chart__swipe-hint {
     border: 1px solid rgba(160, 193, 209, 0.32);
     box-shadow: 0 8px 18px rgba(35, 44, 51, 0.08);
     pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.45s ease, transform 0.45s ease;
 }
 
-body.is-mobile .line-chart__swipe-text {
+body.is-mobile .swipe-fade {
+    display: block;
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    bottom: 2rem;
+    width: 2.25rem;
+    z-index: 1;
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0));
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.45s ease;
+}
+
+body.is-mobile .swipe-hint.is-hidden {
+    opacity: 0;
+    transform: translateY(-4px);
+}
+
+body.is-mobile .swipe-fade.is-hidden {
+    opacity: 0;
+}
+
+body.is-mobile .swipe-hint__text {
     font-size: 0.72rem;
     font-weight: 700;
     color: var(--color-deep);
     letter-spacing: 0.04em;
 }
 
-body.is-mobile .line-chart__swipe-arrows {
+body.is-mobile .swipe-hint__arrows {
     display: inline-block;
     font-size: 0.82rem;
     font-weight: 700;
     color: var(--color-primary);
-    animation: swipeHint 1.5s ease-in-out infinite;
+    animation: swipeArrows 1.35s ease-in-out infinite;
+}
+
+body.is-mobile .swipe-hint--table {
+    top: 0.45rem;
+}
+
+body.is-mobile .table-wrapper .swipe-fade {
+    top: 2rem;
+    bottom: 0;
 }
 
 body.is-mobile .line-chart__svg,
@@ -882,13 +920,21 @@ body.is-mobile .line-chart__x-axis span {
     font-size: 0.78rem;
 }
 
-@keyframes swipeHint {
+@keyframes swipeArrows {
     0%,
     100% {
-        transform: translateX(0);
+        transform: translateX(-4px);
         opacity: 0.7;
     }
+    25% {
+        transform: translateX(4px);
+        opacity: 1;
+    }
     50% {
+        transform: translateX(-4px);
+        opacity: 0.85;
+    }
+    75% {
         transform: translateX(8px);
         opacity: 1;
     }
@@ -919,6 +965,7 @@ body.is-mobile .table-wrapper {
     margin-right: -1rem;
     padding-left: 1rem;
     padding-right: 1rem;
+    padding-top: 2rem;
     border-radius: 0;
     width: calc(100% + 2rem);
     max-width: 100vw;

@@ -81,10 +81,11 @@
                             <span>85</span>
                             <span>80</span>
                         </div>
-                        <div class="line-chart__canvas">
-                            <div class="line-chart__swipe-hint" aria-hidden="true">
-                                <span class="line-chart__swipe-text">左右滑動查看完整圖表</span>
-                                <span class="line-chart__swipe-arrows">← →</span>
+                        <div class="line-chart__canvas js-swipe-area">
+                            <div class="swipe-fade" aria-hidden="true"></div>
+                            <div class="swipe-hint" aria-hidden="true">
+                                <span class="swipe-hint__text">左右滑動查看完整圖表</span>
+                                <span class="swipe-hint__arrows">← →</span>
                             </div>
                             <svg class="line-chart__svg" viewBox="0 0 820 320" preserveAspectRatio="none" aria-hidden="true">
                                 <g class="line-chart__grid">
@@ -149,7 +150,12 @@
                         </div>
                     </div>
                 </div>
-                <div class="table-wrapper">
+                <div class="table-wrapper js-swipe-area">
+                    <div class="swipe-fade" aria-hidden="true"></div>
+                    <div class="swipe-hint swipe-hint--table" aria-hidden="true">
+                        <span class="swipe-hint__text">左右滑動查看完整表格</span>
+                        <span class="swipe-hint__arrows">← →</span>
+                    </div>
                     <table class="grade-table">
                         <thead>
                             <tr>
@@ -379,6 +385,32 @@
         }, { threshold: 0.15 });
 
         counters.forEach(counter => observer.observe(counter));
+
+        const swipeAreas = document.querySelectorAll('.js-swipe-area');
+        swipeAreas.forEach(area => {
+            const hint = area.querySelector('.swipe-hint');
+            if (!hint) return;
+
+            const hideHint = () => {
+                if (hint.classList.contains('is-hidden')) return;
+                hint.classList.add('is-hidden');
+                const fade = area.querySelector('.swipe-fade');
+                if (fade) fade.classList.add('is-hidden');
+                area.removeEventListener('scroll', onScroll);
+                area.removeEventListener('touchstart', onTouchStart);
+            };
+
+            const onScroll = () => {
+                if (area.scrollLeft > 8) hideHint();
+            };
+
+            const onTouchStart = () => {
+                window.setTimeout(onScroll, 120);
+            };
+
+            area.addEventListener('scroll', onScroll, { passive: true });
+            area.addEventListener('touchstart', onTouchStart, { passive: true });
+        });
     });
     </script>
 </body>
