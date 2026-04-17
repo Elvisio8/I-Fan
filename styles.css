@@ -572,6 +572,32 @@ body.page--education.is-mobile .card-grid .card__title {
     box-shadow: 0 10px 20px rgba(35, 44, 51, 0.08);
 }
 
+.competition-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 5.5rem;
+    margin-right: 0.7rem;
+    padding: 0.24rem 0.65rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    vertical-align: middle;
+}
+
+.competition-tag--international {
+    background: rgba(76, 145, 149, 0.16);
+    border: 1px solid rgba(76, 145, 149, 0.34);
+    color: #2d696d;
+}
+
+.competition-tag--domestic {
+    background: rgba(196, 150, 84, 0.16);
+    border: 1px solid rgba(196, 150, 84, 0.34);
+    color: #8a5a16;
+}
+
 .record-grid {
     display: grid;
     gap: 1.3rem;
@@ -603,6 +629,137 @@ body.page--education.is-mobile .card-grid .card__title {
     -webkit-overflow-scrolling: touch;
     width: 100%;
     position: relative;
+}
+
+.line-chart {
+    margin-top: 1.4rem;
+    padding: 1.4rem 1.2rem 1.2rem;
+    border-radius: var(--radius-md);
+    background:
+        linear-gradient(180deg, rgba(160, 193, 209, 0.14), rgba(255, 255, 255, 0.92)),
+        rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(160, 193, 209, 0.3);
+    box-shadow: 0 10px 24px rgba(35, 44, 51, 0.08);
+    overflow: hidden;
+}
+
+.line-chart__frame {
+    display: grid;
+    grid-template-columns: 3rem minmax(0, 1fr);
+    gap: 1rem;
+    align-items: stretch;
+}
+
+.line-chart__y-axis {
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 0;
+    height: 320px;
+    font-size: 0.78rem;
+    color: var(--color-muted);
+    text-align: right;
+}
+
+.line-chart__y-axis span {
+    position: relative;
+    padding-right: 0.3rem;
+    transform: translateY(0.45rem);
+}
+
+.line-chart__canvas {
+    position: relative;
+    min-width: 0;
+}
+
+.line-chart__svg {
+    display: block;
+    width: 100%;
+    min-width: 720px;
+    height: 320px;
+}
+
+.line-chart__canvas {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.35rem;
+}
+
+.line-chart__grid line {
+    stroke: rgba(90, 125, 124, 0.14);
+    stroke-width: 1;
+}
+
+.line-chart__area {
+    fill: rgba(103, 154, 173, 0.12);
+}
+
+.line-chart__path {
+    fill: none;
+    stroke: var(--color-primary);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    filter: drop-shadow(0 8px 14px rgba(35, 44, 51, 0.14));
+}
+
+.line-chart__points circle {
+    fill: #ffffff;
+    stroke: var(--color-primary);
+    stroke-width: 4;
+}
+
+.line-chart__points text {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--color-deep);
+    fill: var(--color-deep);
+    text-anchor: middle;
+    paint-order: stroke;
+    stroke: rgba(255, 255, 255, 0.95);
+    stroke-width: 6px;
+    stroke-linejoin: round;
+}
+
+.line-chart__x-axis {
+    min-width: 720px;
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 0;
+    margin-top: 0.6rem;
+}
+
+.line-chart__x-axis span {
+    text-align: center;
+    font-weight: 600;
+    color: var(--color-deep);
+    letter-spacing: 0.04em;
+    font-size: 0.82rem;
+}
+
+body.is-mobile .line-chart {
+    padding: 1rem 0.9rem;
+}
+
+body.is-mobile .line-chart__frame {
+    grid-template-columns: 2.5rem minmax(0, 1fr);
+}
+
+body.is-mobile .line-chart__y-axis {
+    height: 260px;
+}
+
+body.is-mobile .line-chart__svg,
+body.is-mobile .line-chart__x-axis {
+    min-width: 640px;
+}
+
+body.is-mobile .line-chart__svg {
+    height: 260px;
+}
+
+body.is-mobile .line-chart__points text,
+body.is-mobile .line-chart__x-axis span {
+    font-size: 0.78rem;
 }
 
 body.is-mobile .table-wrapper {
